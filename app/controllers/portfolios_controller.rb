@@ -5,6 +5,22 @@ class PortfoliosController < ApplicationController
 
     end
 
+    def new
+        @portfolio = Portfolio.new
+    end
 
+    def create
+        @portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, :main_image))
+
+        respond_to do |format|
+            if @portfolio.save
+                format.html { redirect_to portfolios_path, notice: "Portfolio is now live"}
+            else
+                format.html { render :new }
+            end
+        end
+      
+
+    end
 
 end
