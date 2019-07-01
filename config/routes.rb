@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   # use /contacts
   get 'contact', to: 'pages#contact'
 
-  resources :blogs
+  resources :blogs do
+    member do 
+      get :toggle_status
+    end
+  end
 
   # set the root directory to pages controller home action
   root to: 'pages#home'
