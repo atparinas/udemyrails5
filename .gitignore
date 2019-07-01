@@ -25,3 +25,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.idea/workspace.xml
+.idea/udemyrails5.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
