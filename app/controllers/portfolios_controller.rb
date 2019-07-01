@@ -2,6 +2,8 @@ class PortfoliosController < ApplicationController
 
     def index
         @portfolios = Portfolio.all
+        # @portfolios = Portfolio.react
+        # @portfolios = Portfolio.ruby_on_rails_portfolios
 
     end
 
