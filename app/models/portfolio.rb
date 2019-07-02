@@ -1,6 +1,9 @@
 class Portfolio < ApplicationRecord
     include Placeholder
 
+    #Relationship
+    has_many :technologies
+
     validates_presence_of :title, :body, :main_image
 
     #Custom Scope
