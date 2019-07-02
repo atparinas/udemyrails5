@@ -4,3 +4,10 @@
 <h3> <%= @portfolio.subtitle %> </h3>
 <p> <%= @portfolio.body %> </p>
 
+<ul>
+    <% @portfolio.technologies.each do |t| %>
+        <li>
+            <%= t.name %>
+        </li>
+    <% end %>
+</ul>

@@ -2,15 +2,20 @@ class PortfoliosController < ApplicationController
 
     def index
         @portfolios = Portfolio.all
+        # @portfolios = Portfolio.react
+        # @portfolios = Portfolio.ruby_on_rails_portfolios
 
     end
 
     def new
         @portfolio = Portfolio.new
+
+        3.times { @portfolio.technologies.build }
     end
 
     def create
-        @portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, :main_image))
+        @portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, :main_image,
+                                    technologies_attributes: [:name] ))
 
         respond_to do |format|
             if @portfolio.save
