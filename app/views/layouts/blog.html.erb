@@ -23,13 +23,8 @@
 
     <%= yield %>
 
-    <ul>
-        <li> <%= link_to "Home", root_path  %> </li>
-        <li> <%= link_to "Blog", blogs_path  %> </li>
-        <li> <%= link_to "Portfolios", portfolios_path %> </li>
-        <li> <%= link_to "About", about_path %> </li>
-        <li> <%= link_to "Contact", contact_path %> </li>
-    </ul>
+    <%= render "shared/nav" , location: 'bottom' %>
+
 
     <div>
        <% if session[:source] %>
