@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title> <%= @page_title  %> </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <ul>
+        <li> <%= link_to "Home", root_path  %> </li>
+        <li> <%= link_to "Blog", blogs_path  %> </li>
+        <li> <%= link_to "Portfolios", portfolios_path %> </li>
+        <li> <%= link_to "About", about_path %> </li>
+        <li> <%= link_to "Contact", contact_path %> </li>
+
+    </ul>
     
     <% if current_user.is_a?(User) %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
