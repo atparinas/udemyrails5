@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title> <%= @page_title  %> </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,23 +12,14 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%= render "shared/nav", location: 'top' %>
+    <%= login_helper %>
+
     
-    <% if current_user.is_a?(User) %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Register', new_user_registration_path %>
-      <%= link_to 'Login', new_user_session_path %>
-    <% end %>
-
     <%= yield %>
-
-    <div>
-       <% if session[:source] %>
-          <p>
-               Thanks for visiting me on <%= session[:source] %>
-          </p>
-       <% end %>
-    </div>
+    
+    <%= source_helper('application') %>
 
   </body>
 </html>
