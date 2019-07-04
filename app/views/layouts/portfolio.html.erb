@@ -20,14 +20,7 @@
 
     <%= render "shared/nav", location: 'bottom' %>
 
-
-    <div>
-       <% if session[:source] %>
-          <p>
-               Thanks for visiting me on <%= session[:source] %>
-          </p>
-       <% end %>
-    </div>
+    <%= source_helper('portfolio') %>
 
   </body>
 </html>
