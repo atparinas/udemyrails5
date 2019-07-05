@@ -61,3 +61,5 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 gem 'parinas_view_tool', git: 'https://github.com/atparinas/copyright_gem'
+
+gem 'petergate', '~> 2.0', '>= 2.0.1'
