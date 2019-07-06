@@ -29,7 +29,7 @@ a:hover {
 
 html,
 body {
-  height: 100%;
+  // height: 100%;
   background-color: #333;
 }
 
@@ -39,10 +39,12 @@ body {
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  box-sizing:border-box;
 }
 
 .cover-container {
   max-width: 55em;
+
 }
 
 
@@ -107,3 +109,18 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+
+
+/*
+ * Custom
+ */
+
+.auth-links a{
+  color: black;
+}
+
+ .card-body{
+   color: black;
+   text-align: left;
+ }
