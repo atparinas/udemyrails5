@@ -15,7 +15,6 @@
   <body class="text-center">
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
           <%= render "shared/application_nav" %>
-          <%= login_helper %>
 
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
@@ -23,11 +22,7 @@
           <%= yield %>
 
 
-          <footer class="mastfoot mt-auto">
-            <div class="inner">
-              <%= @copyright %>
-            </div>
-          </footer>
+          <%= render 'shared/application_footer' %>
      
           <%= source_helper('application') %>
       </div>
