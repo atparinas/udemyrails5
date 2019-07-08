@@ -2,6 +2,10 @@
 
 <%# <a href="portfolios/new"> Create New Portfolio </a> %>
 
+<%= render "shared/portfolio_jumbotron" %>
+
 <%= link_to 'Create New Portfolio', new_portfolio_path  if logged_in?(:site_admin) %>
 
-<%= render @portfolios %>
+<div class="row">
+    <%= render @portfolios %>
+</div>

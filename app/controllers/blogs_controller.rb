@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_copyright
 
   access  all: [:show, :index], 
           user: {except: [:destroy, :new, :create, :edit, :update, :delete]}, 
@@ -10,7 +11,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).per(5)
     @page_title = "My Blog"
   end
 
@@ -93,5 +95,9 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :body)
+    end
+
+    def set_copyright
+      @copyright = ParinasViewTool::Renderer.copyright 'Andy Parinas', 'All rights reserved'
     end
 end
