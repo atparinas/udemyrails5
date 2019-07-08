@@ -14,6 +14,10 @@ class Portfolio < ApplicationRecord
         where(subtitle: 'React JS')
     end
 
+    def self.by_position
+        order("Position ASC")
+    end
+
     scope :ruby_on_rails_portfolios, -> {where(subtitle: "Ruby on Rails")}
 
 

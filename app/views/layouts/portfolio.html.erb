@@ -16,24 +16,16 @@
     <%= render "shared/portfolio_navigation" %>
 
     <main role="main">
-
-
-    <!-- Start of Main Content-->
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-          <%= yield %>
+        <div class="album py-5 bg-light">
+            <div class="container">
+              <%= yield %>
+            </div>
         </div>
-    </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-    <%= login_helper %>
-    
-
-
+        <%= login_helper %>
     </main>
-    <%= render "shared/nav", location: 'bottom' %>
 
     <%= source_helper('portfolio') %>
 

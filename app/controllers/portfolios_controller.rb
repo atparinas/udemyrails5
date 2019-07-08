@@ -7,7 +7,8 @@ class PortfoliosController < ApplicationController
     site_admin: :all
 
     def index
-        @portfolios = Portfolio.all
+        @portfolios = Portfolio.by_position
+        # @portfolios = Portfolio.all
         # @portfolios = Portfolio.react
         # @portfolios = Portfolio.ruby_on_rails_portfolios
 
